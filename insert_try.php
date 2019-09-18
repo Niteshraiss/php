@@ -1,19 +1,16 @@
 <?php
 $na="localhost";
 $us="root";
-$pass="Samitanitesh";
-$db="lifeinspirers";
+$pass="";
+$db="mydatabase";
 $con=new mysqli($na,$us,$pass,$db);
 if($con==TRUE)
 echo "Connected";
-
-    $quot=mysqli_real_escape_string($con,$_POST['quote']);
-    $da=mysqli_real_escape_string($con,$_POST['date']);
-    $name=mysqli_real_escape_string($con,$_POST['author']);
-    echo $quot;
-    echo $da;
-    echo $name;
-    $qu="insert into myquotes(quote,date,author)values('$quot','$da','$name')";
+//for inserting data
+    $quot=$_POST['quote']);
+    $da=$_POST['date']);
+    $name=$_POST['author']);
+    $qu="insert into mytable(quote,date,author)values('$quot','$da','$name')";
     $qu=mysqli_query($con,$qu);
     if($qu==TRUE)
     {
